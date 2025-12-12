@@ -1,0 +1,214 @@
+{
+  "projets": [
+    {
+      "nom": "Site E-commerce B2C",
+      "technologies": ["PHP", "Symfony", "MySQL", "React", "Redis", "Docker"],
+      "equipe": ["Jean Dupont", "Sophie Martin", "Julie Leroy"],
+      "duree_mois": 8,
+      "date_fin": "2024-08"
+    },
+    {
+      "nom": "API REST Microservices",
+      "technologies": ["Java", "Spring Boot", "Kafka", "PostgreSQL", "Docker", "Kubernetes"],
+      "equipe": ["Marie Durand", "Maxime Vincent", "Nathan Mercier"],
+      "duree_mois": 12,
+      "date_fin": "2024-12"
+    },
+    {
+      "nom": "Application Mobile Fitness",
+      "technologies": ["React Native", "TypeScript", "Firebase", "GraphQL"],
+      "equipe": ["Emma Moreau", "Luc Bernard"],
+      "duree_mois": 6,
+      "date_fin": "2024-06"
+    },
+    {
+      "nom": "Plateforme SaaS Analytics",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "React", "Docker", "AWS"],
+      "equipe": ["Pierre Laurent", "Chloé Girard", "Sophie Martin"],
+      "duree_mois": 10,
+      "date_fin": "2024-10"
+    },
+    {
+      "nom": "Application Desktop Gestion",
+      "technologies": ["C#", ".NET Core", "SQL Server", "Blazor", "Azure"],
+      "equipe": ["Thomas Petit"],
+      "duree_mois": 8,
+      "date_fin": "2024-11"
+    },
+    {
+      "nom": "Dashboard Analytics Temps Réel",
+      "technologies": ["Python", "Django", "React", "PostgreSQL", "Redis", "WebSockets"],
+      "equipe": ["Sophie Martin", "Jean Dupont", "Pauline Blanc"],
+      "duree_mois": 5,
+      "date_fin": "2024-09"
+    },
+    {
+      "nom": "Application iOS Santé",
+      "technologies": ["Swift", "iOS", "Firebase", "REST API"],
+      "equipe": ["Nicolas Garcia"],
+      "duree_mois": 7,
+      "date_fin": "2024-07"
+    },
+    {
+      "nom": "Application Android Shopping",
+      "technologies": ["Kotlin", "Android", "Java", "Firebase", "SQLite"],
+      "equipe": ["Camille David", "Manon Lefebvre"],
+      "duree_mois": 6,
+      "date_fin": "2024-08"
+    },
+    {
+      "nom": "Système de Messagerie Temps Réel",
+      "technologies": ["Go", "gRPC", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
+      "equipe": ["Antoine Simon", "Nathan Mercier"],
+      "duree_mois": 9,
+      "date_fin": "2024-09"
+    },
+    {
+      "nom": "Plateforme E-learning",
+      "technologies": ["Ruby", "Rails", "PostgreSQL", "React", "Heroku"],
+      "equipe": ["Laura Michel", "Julie Leroy"],
+      "duree_mois": 11,
+      "date_fin": "2024-11"
+    },
+    {
+      "nom": "Système embarqué IoT",
+      "technologies": ["Rust", "Linux", "Docker", "PostgreSQL"],
+      "equipe": ["Alexandre Bertrand"],
+      "duree_mois": 10,
+      "date_fin": "2024-10"
+    },
+    {
+      "nom": "Site E-commerce B2B",
+      "technologies": ["PHP", "Laravel", "MySQL", "Vue.js", "Redis", "AWS"],
+      "equipe": ["Léa Roux", "Jean Dupont"],
+      "duree_mois": 9,
+      "date_fin": "2024-09"
+    },
+    {
+      "nom": "Plateforme de Streaming",
+      "technologies": ["C++", "Qt", "CMake", "Linux"],
+      "equipe": ["Hugo Morel"],
+      "duree_mois": 12,
+      "date_fin": "2025-01"
+    },
+    {
+      "nom": "Site Vitrine Next.js",
+      "technologies": ["JavaScript", "Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+      "equipe": ["Chloé Girard"],
+      "duree_mois": 3,
+      "date_fin": "2024-05"
+    },
+    {
+      "nom": "Pipeline Big Data",
+      "technologies": ["Scala", "Apache Spark", "Kafka", "Elasticsearch", "Docker", "Kubernetes"],
+      "equipe": ["Lucas Andre", "Maxime Vincent"],
+      "duree_mois": 14,
+      "date_fin": "2025-02"
+    },
+    {
+      "nom": "Application Mobile Cross-Platform",
+      "technologies": ["Flutter", "Dart", "Firebase", "Android", "iOS"],
+      "equipe": ["Manon Lefebvre", "Emma Moreau"],
+      "duree_mois": 8,
+      "date_fin": "2024-08"
+    },
+    {
+      "nom": "Infrastructure Cloud AWS",
+      "technologies": ["Terraform", "AWS", "Docker", "Kubernetes", "Ansible", "Jenkins"],
+      "equipe": ["Nathan Mercier", "Pierre Laurent"],
+      "duree_mois": 6,
+      "date_fin": "2024-06"
+    },
+    {
+      "nom": "Plateforme Chat Temps Réel",
+      "technologies": ["Elixir", "Phoenix", "PostgreSQL", "WebSockets", "Docker"],
+      "equipe": ["Pauline Blanc"],
+      "duree_mois": 7,
+      "date_fin": "2024-07"
+    },
+    {
+      "nom": "API GraphQL E-commerce",
+      "technologies": ["JavaScript", "Node.js", "GraphQL", "MongoDB", "TypeScript", "Docker"],
+      "equipe": ["Luc Bernard", "Julie Leroy"],
+      "duree_mois": 5,
+      "date_fin": "2024-05"
+    },
+    {
+      "nom": "Plateforme ML/AI",
+      "technologies": ["Python", "TensorFlow", "Pandas", "NumPy", "Jupyter", "Docker"],
+      "equipe": ["Charlotte Fournier", "Sophie Martin"],
+      "duree_mois": 15,
+      "date_fin": "2025-03"
+    },
+    {
+      "nom": "Application CRM",
+      "technologies": ["Java", "Spring", "Angular", "PostgreSQL", "Docker"],
+      "equipe": ["Marie Durand", "Chloé Girard"],
+      "duree_mois": 10,
+      "date_fin": "2024-10"
+    },
+    {
+      "nom": "Système de Facturation",
+      "technologies": ["PHP", "Laravel", "MySQL", "React", "Redis"],
+      "equipe": ["Léa Roux", "Jean Dupont"],
+      "duree_mois": 6,
+      "date_fin": "2024-06"
+    },
+    {
+      "nom": "Application de Réservation",
+      "technologies": ["Python", "Django", "PostgreSQL", "Vue.js", "Redis"],
+      "equipe": ["Sophie Martin", "Julie Leroy"],
+      "duree_mois": 7,
+      "date_fin": "2024-07"
+    },
+    {
+      "nom": "Plateforme de Blog",
+      "technologies": ["Ruby", "Rails", "PostgreSQL", "React"],
+      "equipe": ["Laura Michel"],
+      "duree_mois": 4,
+      "date_fin": "2024-04"
+    },
+    {
+      "nom": "Application de Livraison",
+      "technologies": ["Go", "gRPC", "PostgreSQL", "Redis", "Docker"],
+      "equipe": ["Antoine Simon", "Pierre Laurent"],
+      "duree_mois": 8,
+      "date_fin": "2024-08"
+    },
+    {
+      "nom": "Système RH Interne",
+      "technologies": ["C#", ".NET Core", "SQL Server", "Angular", "Azure"],
+      "equipe": ["Thomas Petit", "Marie Durand"],
+      "duree_mois": 9,
+      "date_fin": "2024-09"
+    },
+    {
+      "nom": "Outil de Monitoring",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "React", "Docker", "Kubernetes"],
+      "equipe": ["Pierre Laurent", "Nathan Mercier"],
+      "duree_mois": 6,
+      "date_fin": "2024-06"
+    },
+    {
+      "nom": "Application de Gestion de Projet",
+      "technologies": ["JavaScript", "Next.js", "React", "PostgreSQL", "Vercel"],
+      "equipe": ["Chloé Girard", "Luc Bernard"],
+      "duree_mois": 8,
+      "date_fin": "2024-08"
+    },
+    {
+      "nom": "Système de Ticketing",
+      "technologies": ["Java", "Spring Boot", "PostgreSQL", "React", "Docker"],
+      "equipe": ["Maxime Vincent", "Sophie Martin"],
+      "duree_mois": 7,
+      "date_fin": "2024-07"
+    },
+    {
+      "nom": "Application Mobile Banking",
+      "technologies": ["React Native", "TypeScript", "Firebase", "GraphQL"],
+      "equipe": ["Emma Moreau", "Luc Bernard"],
+      "duree_mois": 12,
+      "date_fin": "2024-12"
+    }
+  ]
+}

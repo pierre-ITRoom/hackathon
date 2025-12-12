@@ -4,7 +4,9 @@ Ce dossier contient des fichiers exemples pour tester les fonctionnalités d'imp
 
 ## Fichiers disponibles
 
-### 1. competences.csv
+### Données de démo (petites)
+
+#### 1. competences.csv
 Fichier CSV contenant 20 compétences pour 6 développeurs différents.
 
 **Utilisation :**
@@ -22,7 +24,7 @@ curl -X POST http://localhost:5000/import/competences/json \
   -F "file=@examples/competences.json"
 ```
 
-### 3. projets.json
+#### 3. projets.json
 Fichier JSON contenant 6 projets avec leurs équipes et technologies.
 
 **Utilisation :**
@@ -30,6 +32,32 @@ Fichier JSON contenant 6 projets avec leurs équipes et technologies.
 curl -X POST http://localhost:5000/import/projects/json \
   -F "file=@examples/projets.json"
 ```
+
+### Données massives (tests de performance)
+
+#### 4. competences_massives.csv
+Fichier CSV contenant 140+ compétences pour 20 développeurs.
+
+**Utilisation :**
+```bash
+curl -X POST http://localhost:5000/import/competences/csv \
+  -F "file=@examples/competences_massives.csv"
+```
+
+#### 5. projets_massifs.json
+Fichier JSON contenant 30 projets complets avec équipes et technologies.
+
+**Utilisation :**
+```bash
+curl -X POST http://localhost:5000/import/projects/json \
+  -F "file=@examples/projets_massifs.json"
+```
+
+**Contenu :**
+- 20 collaborateurs uniques
+- 80+ technologies différentes
+- 30 projets variés (E-commerce, Mobile, API, ML, etc.)
+- 300+ entrées d'historique de projet
 
 ## Scénario de test complet
 

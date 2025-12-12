@@ -43,20 +43,20 @@ class BaseModel:
         values = tuple(data.values()) + (item_id,)
 
         conn = get_db_connection()
-        conn.execute(
+        cursor = conn.execute(
             f"UPDATE {self.table_name} SET {set_clause} WHERE id = ?",
             values
         )
+        affected_rows = cursor.rowcount
         conn.commit()
-        affected_rows = conn.total_changes
         conn.close()
         return affected_rows > 0
 
     def delete(self, item_id):
         conn = get_db_connection()
-        conn.execute(f"DELETE FROM {self.table_name} WHERE id = ?", (item_id,))
+        cursor = conn.execute(f"DELETE FROM {self.table_name} WHERE id = ?", (item_id,))
+        affected_rows = cursor.rowcount
         conn.commit()
-        affected_rows = conn.total_changes
         conn.close()
         return affected_rows > 0
 
@@ -85,12 +85,12 @@ class RelationModel:
 
     def delete(self, value1, value2):
         conn = get_db_connection()
-        conn.execute(
+        cursor = conn.execute(
             f"DELETE FROM {self.table_name} WHERE {self.field1} = ? AND {self.field2} = ?",
             (value1, value2)
         )
+        affected_rows = cursor.rowcount
         conn.commit()
-        affected_rows = conn.total_changes
         conn.close()
         return affected_rows > 0
 
