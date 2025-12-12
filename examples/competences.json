@@ -1,0 +1,44 @@
+[
+  {
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "technologie": "PHP",
+    "niveau_declare": 4
+  },
+  {
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "technologie": "Symfony",
+    "niveau_declare": 4
+  },
+  {
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "technologie": "React",
+    "niveau_declare": 3
+  },
+  {
+    "nom": "Martin",
+    "prenom": "Sophie",
+    "technologie": "Python",
+    "niveau_declare": 5
+  },
+  {
+    "nom": "Martin",
+    "prenom": "Sophie",
+    "technologie": "Django",
+    "niveau_declare": 4
+  },
+  {
+    "nom": "Bernard",
+    "prenom": "Luc",
+    "technologie": "JavaScript",
+    "niveau_declare": 5
+  },
+  {
+    "nom": "Bernard",
+    "prenom": "Luc",
+    "technologie": "Node.js",
+    "niveau_declare": 5
+  }
+]

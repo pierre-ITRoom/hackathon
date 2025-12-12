@@ -95,10 +95,76 @@ class RelationModel:
         return affected_rows > 0
 
 
+class CompetenceModel(BaseModel):
+    def __init__(self):
+        super().__init__('competence')
+
+    def get_by_collaborator(self, id_collaborator):
+        conn = get_db_connection()
+        items = conn.execute(
+            "SELECT * FROM competence WHERE id_collaborator = ?",
+            (id_collaborator,)
+        ).fetchall()
+        conn.close()
+        return [dict(item) for item in items]
+
+    def get_by_techno(self, id_techno):
+        conn = get_db_connection()
+        items = conn.execute(
+            "SELECT * FROM competence WHERE id_techno = ?",
+            (id_techno,)
+        ).fetchall()
+        conn.close()
+        return [dict(item) for item in items]
+
+    def get_by_collaborator_techno(self, id_collaborator, id_techno):
+        conn = get_db_connection()
+        item = conn.execute(
+            "SELECT * FROM competence WHERE id_collaborator = ? AND id_techno = ?",
+            (id_collaborator, id_techno)
+        ).fetchone()
+        conn.close()
+        return dict(item) if item else None
+
+
+class ProjectHistoryModel(BaseModel):
+    def __init__(self):
+        super().__init__('project_techno_history')
+
+    def get_by_project(self, id_project):
+        conn = get_db_connection()
+        items = conn.execute(
+            "SELECT * FROM project_techno_history WHERE id_project = ?",
+            (id_project,)
+        ).fetchall()
+        conn.close()
+        return [dict(item) for item in items]
+
+    def get_by_collaborator(self, id_collaborator):
+        conn = get_db_connection()
+        items = conn.execute(
+            "SELECT * FROM project_techno_history WHERE id_collaborator = ?",
+            (id_collaborator,)
+        ).fetchall()
+        conn.close()
+        return [dict(item) for item in items]
+
+    def get_by_techno(self, id_techno):
+        conn = get_db_connection()
+        items = conn.execute(
+            "SELECT * FROM project_techno_history WHERE id_techno = ?",
+            (id_techno,)
+        ).fetchall()
+        conn.close()
+        return [dict(item) for item in items]
+
+
 collaborator_model = BaseModel('collaborator')
 type_model = BaseModel('type')
 project_model = BaseModel('project')
 techno_model = BaseModel('techno')
+competence_model = CompetenceModel()
+project_history_model = ProjectHistoryModel()
 
 techno_type_model = RelationModel('techno_type', 'id_techno', 'id_type')
 techno_project_model = RelationModel('techno_project', 'id_techno', 'id_project')

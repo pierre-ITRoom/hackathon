@@ -19,12 +19,20 @@ def get_project(project_id):
 def add_project():
     data = request.get_json()
     name = data.get("name")
+    date_fin = data.get("date_fin")
+    duree_mois = data.get("duree_mois")
 
     if not name:
         return jsonify({"error": "name is required"}), 400
 
+    project_data = {"name": name}
+    if date_fin:
+        project_data["date_fin"] = date_fin
+    if duree_mois:
+        project_data["duree_mois"] = duree_mois
+
     try:
-        item_id = project_model.create({"name": name})
+        item_id = project_model.create(project_data)
         return jsonify({"message": f"Project {name} added!", "id": item_id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 400
@@ -40,11 +48,19 @@ def update_project(project_id):
     if not project:
         return jsonify({"error": "Project not found"}), 404
 
-    if "name" not in data:
-        return jsonify({"error": "name field is required"}), 400
+    update_data = {}
+    if "name" in data:
+        update_data["name"] = data["name"]
+    if "date_fin" in data:
+        update_data["date_fin"] = data["date_fin"]
+    if "duree_mois" in data:
+        update_data["duree_mois"] = data["duree_mois"]
+
+    if not update_data:
+        return jsonify({"error": "No valid fields to update"}), 400
 
     try:
-        project_model.update(project_id, {"name": data["name"]})
+        project_model.update(project_id, update_data)
         return jsonify({"message": f"Project {project_id} updated!"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 400

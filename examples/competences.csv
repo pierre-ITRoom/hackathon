@@ -1,0 +1,21 @@
+nom,prenom,technologie,niveau_declare
+Dupont,Jean,PHP,4
+Dupont,Jean,Symfony,4
+Dupont,Jean,React,3
+Dupont,Jean,MySQL,4
+Martin,Sophie,Python,5
+Martin,Sophie,Django,4
+Martin,Sophie,PostgreSQL,4
+Bernard,Luc,JavaScript,5
+Bernard,Luc,Node.js,5
+Bernard,Luc,MongoDB,4
+Bernard,Luc,React,4
+Durand,Marie,Java,4
+Durand,Marie,Spring Boot,3
+Durand,Marie,Angular,3
+Petit,Thomas,C#,5
+Petit,Thomas,.NET,5
+Petit,Thomas,SQL Server,4
+Moreau,Emma,React Native,4
+Moreau,Emma,TypeScript,4
+Moreau,Emma,Firebase,3

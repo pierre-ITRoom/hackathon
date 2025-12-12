@@ -1,0 +1,46 @@
+{
+  "projets": [
+    {
+      "nom": "Site E-commerce",
+      "technologies": ["PHP", "Symfony", "MySQL", "React"],
+      "equipe": ["Jean Dupont", "Sophie Martin"],
+      "duree_mois": 6,
+      "date_fin": "2024-08"
+    },
+    {
+      "nom": "API REST Entreprise",
+      "technologies": ["Node.js", "Express", "MongoDB", "JWT"],
+      "equipe": ["Luc Bernard"],
+      "duree_mois": 4,
+      "date_fin": "2024-06"
+    },
+    {
+      "nom": "Application Mobile Fitness",
+      "technologies": ["React Native", "TypeScript", "Firebase"],
+      "equipe": ["Emma Moreau", "Luc Bernard"],
+      "duree_mois": 8,
+      "date_fin": "2024-12"
+    },
+    {
+      "nom": "Plateforme SaaS RH",
+      "technologies": ["Java", "Spring Boot", "Angular", "PostgreSQL"],
+      "equipe": ["Marie Durand"],
+      "duree_mois": 12,
+      "date_fin": "2025-03"
+    },
+    {
+      "nom": "Application Desktop Gestion",
+      "technologies": ["C#", ".NET", "WPF", "SQL Server"],
+      "equipe": ["Thomas Petit"],
+      "duree_mois": 10,
+      "date_fin": "2024-11"
+    },
+    {
+      "nom": "Dashboard Analytics",
+      "technologies": ["Python", "Django", "React", "PostgreSQL"],
+      "equipe": ["Sophie Martin", "Jean Dupont"],
+      "duree_mois": 5,
+      "date_fin": "2024-09"
+    }
+  ]
+}

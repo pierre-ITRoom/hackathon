@@ -32,6 +32,8 @@ def init_db():
         CREATE TABLE IF NOT EXISTS project (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
+            date_fin TEXT,
+            duree_mois INTEGER,
             date_add DATETIME NOT NULL,
             date_upd DATETIME NOT NULL
         )
@@ -42,6 +44,38 @@ def init_db():
             name TEXT NOT NULL,
             date_add DATETIME NOT NULL,
             date_upd DATETIME NOT NULL
+        )
+    ''')
+
+    # Table des compétences
+    conn.execute('''
+        CREATE TABLE IF NOT EXISTS competence (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id_collaborator INTEGER NOT NULL,
+            id_techno INTEGER NOT NULL,
+            niveau_declare INTEGER CHECK(niveau_declare BETWEEN 1 AND 5),
+            niveau_calcule REAL CHECK(niveau_calcule BETWEEN 1 AND 5),
+            date_add DATETIME NOT NULL,
+            date_upd DATETIME NOT NULL,
+            FOREIGN KEY(id_collaborator) REFERENCES collaborator(id),
+            FOREIGN KEY(id_techno) REFERENCES techno(id),
+            UNIQUE(id_collaborator, id_techno)
+        )
+    ''')
+
+    # Table historique des technos utilisées par projet
+    conn.execute('''
+        CREATE TABLE IF NOT EXISTS project_techno_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id_project INTEGER NOT NULL,
+            id_techno INTEGER NOT NULL,
+            id_collaborator INTEGER NOT NULL,
+            date_debut TEXT,
+            date_fin TEXT,
+            duree_mois INTEGER,
+            FOREIGN KEY(id_project) REFERENCES project(id),
+            FOREIGN KEY(id_techno) REFERENCES techno(id),
+            FOREIGN KEY(id_collaborator) REFERENCES collaborator(id)
         )
     ''')
 
