@@ -1,10 +1,8 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 import sqlite3
 import datetime
 
 app = Flask(__name__)
-CORS(app)
 DATABASE = "data/database.db"
 
 def get_db_connection():
@@ -15,7 +13,7 @@ def get_db_connection():
 def init_db():
     conn = get_db_connection()
 
-    # Collaborator
+    # Tables principales
     conn.execute('''
         CREATE TABLE IF NOT EXISTS collaborator (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,8 +23,6 @@ def init_db():
             date_upd DATETIME NOT NULL
         )
     ''')
-
-    # Type
     conn.execute('''
         CREATE TABLE IF NOT EXISTS type (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -35,8 +31,6 @@ def init_db():
             date_upd DATETIME NOT NULL
         )
     ''')
-
-    # Project
     conn.execute('''
         CREATE TABLE IF NOT EXISTS project (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -45,8 +39,6 @@ def init_db():
             date_upd DATETIME NOT NULL
         )
     ''')
-
-    # Techno
     conn.execute('''
         CREATE TABLE IF NOT EXISTS techno (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -64,7 +56,6 @@ def init_db():
             PRIMARY KEY(id_techno, id_type)
         )
     ''')
-
     conn.execute('''
         CREATE TABLE IF NOT EXISTS techno_project (
             id_techno INTEGER,
@@ -72,7 +63,6 @@ def init_db():
             PRIMARY KEY(id_techno, id_project)
         )
     ''')
-
     conn.execute('''
         CREATE TABLE IF NOT EXISTS collaborator_project (
             id_collaborator INTEGER,
@@ -204,6 +194,98 @@ def add_techno():
         return jsonify({"error": str(e)}), 400
     conn.close()
     return jsonify({"message": f"Techno {name} added!"}), 201
+
+# ---------------- Routes Liaison ----------------
+
+# Techno ↔ Type
+@app.route("/techno_type", methods=["GET"])
+def get_techno_type():
+    conn = get_db_connection()
+    rows = conn.execute("SELECT * FROM techno_type").fetchall()
+    conn.close()
+    return jsonify([dict(r) for r in rows])
+
+@app.route("/techno_type", methods=["POST"])
+def add_techno_type():
+    data = request.get_json()
+    id_techno = data.get("id_techno")
+    id_type = data.get("id_type")
+
+    if not id_techno or not id_type:
+        return jsonify({"error": "id_techno and id_type are required"}), 400
+
+    conn = get_db_connection()
+    try:
+        conn.execute(
+            "INSERT INTO techno_type (id_techno, id_type) VALUES (?, ?)",
+            (id_techno, id_type)
+        )
+        conn.commit()
+    except Exception as e:
+        conn.close()
+        return jsonify({"error": str(e)}), 400
+    conn.close()
+    return jsonify({"message": f"Techno {id_techno} linked to Type {id_type}!"}), 201
+
+# Techno ↔ Project
+@app.route("/techno_project", methods=["GET"])
+def get_techno_project():
+    conn = get_db_connection()
+    rows = conn.execute("SELECT * FROM techno_project").fetchall()
+    conn.close()
+    return jsonify([dict(r) for r in rows])
+
+@app.route("/techno_project", methods=["POST"])
+def add_techno_project():
+    data = request.get_json()
+    id_techno = data.get("id_techno")
+    id_project = data.get("id_project")
+
+    if not id_techno or not id_project:
+        return jsonify({"error": "id_techno and id_project are required"}), 400
+
+    conn = get_db_connection()
+    try:
+        conn.execute(
+            "INSERT INTO techno_project (id_techno, id_project) VALUES (?, ?)",
+            (id_techno, id_project)
+        )
+        conn.commit()
+    except Exception as e:
+        conn.close()
+        return jsonify({"error": str(e)}), 400
+    conn.close()
+    return jsonify({"message": f"Techno {id_techno} linked to Project {id_project}!"}), 201
+
+# Collaborator ↔ Project
+@app.route("/collaborator_project", methods=["GET"])
+def get_collaborator_project():
+    conn = get_db_connection()
+    rows = conn.execute("SELECT * FROM collaborator_project").fetchall()
+    conn.close()
+    return jsonify([dict(r) for r in rows])
+
+@app.route("/collaborator_project", methods=["POST"])
+def add_collaborator_project():
+    data = request.get_json()
+    id_collaborator = data.get("id_collaborator")
+    id_project = data.get("id_project")
+
+    if not id_collaborator or not id_project:
+        return jsonify({"error": "id_collaborator and id_project are required"}), 400
+
+    conn = get_db_connection()
+    try:
+        conn.execute(
+            "INSERT INTO collaborator_project (id_collaborator, id_project) VALUES (?, ?)",
+            (id_collaborator, id_project)
+        )
+        conn.commit()
+    except Exception as e:
+        conn.close()
+        return jsonify({"error": str(e)}), 400
+    conn.close()
+    return jsonify({"message": f"Collaborator {id_collaborator} linked to Project {id_project}!"}), 201
 
 # ---------------- Main ----------------
 if __name__ == "__main__":
